@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d3836ae-0ab0-4957-b5aa-7c834192394b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/static.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static.json" beforeDir="false" afterPath="$PROJECT_DIR$/static.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,8 +53,8 @@
       <file leaf-file-name="static.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -269,12 +270,12 @@
       <workItem from="1534302823070" duration="82046000" />
       <workItem from="1534548972918" duration="1328000" />
       <workItem from="1534813027980" duration="10922000" />
-      <workItem from="1534856050751" duration="6976000" />
+      <workItem from="1534856050751" duration="7664000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101272000" />
+    <option name="totallyTimeSpent" value="101960000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -290,7 +291,7 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Remote Host" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.21405493" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.21405493" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32965517" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -298,7 +299,7 @@
       <window_info anchor="bottom" id="Run" order="6" weight="0.4262069" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.23586208" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.44275862" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -681,8 +682,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
