@@ -1,0 +1,99 @@
+.table{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: auto;
+    height: 400px;
+}
+
+.head {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.body {
+    flex: 99999 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.row {
+    flex: 1 0 auto;
+    display: inline-flex;
+}
+
+.row:nth-child(odd) {
+    background-color: #fefefe;
+}
+
+.row:nth-child(even) {
+    background-color: #eee;
+}
+
+.row:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.headCell {
+    flex: 1 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 7px 5px;
+    position: relative;
+    border-right: 1px solid #ddd;
+    overflow: visible;
+    min-width: 100px;
+    background-color: #555;
+    color: #fff;
+}
+
+.headCell:last-child {
+    border-right: none;
+}
+
+.cell {
+    flex: 1 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 7px 5px;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    min-width: 100px;
+}
+
+.resizeHandle {
+    display: inline-block;
+    position: absolute;
+    width: 36px;
+    top: 0;
+    bottom: 0;
+    right: -18px;
+    cursor: col-resize;
+    z-index: 10;
+}
+
+.actionsCell {
+    width: 75px;
+    min-width: 75px;
+    flex: 0 0 75px;
+    padding: 7px 5px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    white-space: nowrap;
+    position: relative;
+    overflow: visible;
+    background-color: #555;
+    color: #fff;
+}
+
+.action {
+    cursor: pointer;
+}

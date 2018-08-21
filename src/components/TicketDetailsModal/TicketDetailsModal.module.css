@@ -1,0 +1,17 @@
+.details {
+
+}
+
+.row {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: bold;
+}
