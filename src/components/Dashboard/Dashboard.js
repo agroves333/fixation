@@ -32,7 +32,7 @@ class Dashboard extends Component {
   }
 
   toggleFormModal(id) {
-    id && this.props.getTicket(id);
+    this.props.getTicket(id);
     this.setState({
       currentTicketId: id,
       formModalOpen: !this.state.formModalOpen,

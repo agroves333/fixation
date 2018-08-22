@@ -43,20 +43,27 @@ export const getTicket = id => dispatch => {
     type: 'GET_TICKET_REQUESTED',
   });
   
-  db.collection('tickets').doc(id)
-    .get()
-    .then(doc => {
-      dispatch({
-        type: 'GET_TICKET_SUCCESS',
-        payload: doc.data(),
+  if (id) {
+    db.collection('tickets').doc(id)
+      .get()
+      .then(doc => {
+        dispatch({
+          type: 'GET_TICKET_SUCCESS',
+          payload: doc.data(),
+        });
+      })
+      .catch(error => {
+        dispatch({
+          type: 'GET_TICKET_FAILED',
+          error
+        });
       });
-    })
-    .catch(error => {
-      dispatch({
-        type: 'GET_TICKET_FAILED',
-        error
-      });
+  } else {
+    dispatch({
+      type: 'GET_TICKET_SUCCESS',
+      payload: {},
     });
+  }
 };
 
 export const createTicket = data => dispatch => {

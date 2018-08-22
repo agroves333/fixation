@@ -77,13 +77,13 @@ export default (
   connect()(
     withFormik({
       enableReinitialize: true,
-      mapPropsToValues: ({ data }) => data || {
-        summary: '',
-        description: '',
-        assignee: '',
-        reporter: '',
-        priority: 1
-      },
+      mapPropsToValues: ({ data }) => ({
+        summary: data.summary || '',
+        description: data.description || '',
+        assignee: data.assignee || '',
+        reporter: data.reporter || '',
+        priority: data.priority || 1
+      }),
       validate: (values, props) => {
         const errors = {};
         return errors;
