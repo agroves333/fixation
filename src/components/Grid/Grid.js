@@ -150,7 +150,7 @@ class Grid extends Component {
               this.offset = this.headers[column].offsetWidth - e.pageX;
             }}
           />
-          <Octicon icon={this.state.sorts[column] ? TriangleDown : TriangleUp} />
+          <Octicon icon={this.state.sorts[column] ? TriangleUp : TriangleDown} />
         </div>
       );
     });
