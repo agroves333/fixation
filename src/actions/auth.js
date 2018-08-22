@@ -1,4 +1,5 @@
-import firebase from '../firebase';
+import firebase, { db } from '../firebase';
+import get from 'lodash/get';
 
 export const login = payload => dispatch => {
   dispatch({
@@ -26,12 +27,22 @@ export const register = payload => dispatch => {
   });
   firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
     .then(response => {
+      const user = get(response, 'user');
+      
+      if (user) {
+        db.collection('users').doc(user.uid).set({
+          email: user.email,
+          name: payload.name,
+        });
+      }
+      
       dispatch({
         type: 'REGISTER_SUCCESS',
-        user: response.user
+        user: {
+          email: user.email,
+          name: payload.name,
+        }
       });
-      // Save user
-      // db.collection('users').doc(user.id)
     })
     .catch(error => {
       dispatch({

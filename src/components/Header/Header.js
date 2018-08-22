@@ -33,7 +33,7 @@ class Header extends Component {
   
   getAvatar() {
     const photoURL = get(this.prop, 'user.photoURL', false);
-    const name = get(this.props, 'user.displayName', false);
+    const name = get(this.props, 'user.name', false);
     const email = get(this.props, 'user.email', '');
     const username = email && email.split('@')[0];
     const initials = name && name.split(' ').reduce((acc, item) => {
@@ -58,7 +58,7 @@ class Header extends Component {
   render() {
     const { user } = this.props;
     const photoURL = get(user, 'photoURL', false);
-    const name = get(user, 'displayName', false);
+    const name = get(user, 'name', false);
     const showUsernameDropdown = !(photoURL || name);
     
     return (

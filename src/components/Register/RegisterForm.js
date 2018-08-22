@@ -26,6 +26,10 @@ class RegisterForm extends Component {
     return (
       <Form className={s.form}>
         <FormGroup>
+          <Label for="name">Name</Label>
+          <Input type="text" name="name" onChange={handleChange} />
+        </FormGroup>
+        <FormGroup>
           <Label for="email">Email</Label>
           <Input type="text" name="email" onChange={handleChange} />
         </FormGroup>
@@ -54,6 +58,7 @@ export default (
   connect()(
     withFormik({
       mapPropsToValues: () => ({
+        name: '',
         email: '',
         password: '',
       }),

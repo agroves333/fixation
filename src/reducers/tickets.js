@@ -6,11 +6,6 @@ const tickets = (state = [], action) => {
       return action.payload;
     case 'GET_TICKETS_FAILED':
       return action.error;
-    case 'REORDER_COLUMNS': {
-      const { source, target } = action;
-      console.log(source, target)
-    }
-    
     default:
       return state
   }

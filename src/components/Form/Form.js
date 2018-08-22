@@ -23,6 +23,7 @@ class TicketForm extends Component {
       handleSubmit,
       handleChange,
     } = this.props;
+
     return (
       <Form className={s.form}>
         <FormGroup>

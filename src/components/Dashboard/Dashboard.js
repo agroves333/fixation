@@ -4,10 +4,9 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { connect } from 'react-redux';
 import Form from '../Form/Form';
 import Grid from '../Grid/Grid';
-import Header from '../Header/Header';
 import TicketDetailsModal from '../TicketDetailsModal/TicketDetailsModal';
 
-import { createTicket, getTickets, getTicket, updateTicket, deleteTicket, reorderColumns } from "../../actions/ticket";
+import { createTicket, getTickets, getTicket, updateTicket, deleteTicket } from "../../actions/ticket";
 import s from './Dashboard.module.css';
 
 class Dashboard extends Component {
@@ -148,5 +147,4 @@ export default connect(mapStateToProps, {
   getTicket,
   updateTicket,
   deleteTicket,
-  reorderColumns,
 })(Dashboard);

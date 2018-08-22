@@ -41,15 +41,6 @@ class Grid extends Component {
     document.addEventListener('mouseup', () => {
       this.currentResizeKey = null;
     });
-    
-    // const columnOrder = localStorage.getItem('columnOrder');
-    // if (columnOrder) {
-    //   this.setState({
-    //     columnOrder: JSON.parse(columnOrder),
-    //   })
-    // } else {
-    //   localStorage.setItem('columnOrder', JSON.stringify(this.state.columnOrder));
-    // }
   }
 
   componentDidUpdate(prevProps) {
@@ -152,6 +143,7 @@ class Grid extends Component {
           <strong className="mr-2">{this.props.headers[column]}</strong>
           <div
             className={s.resizeHandle}
+            onClick={e => e.stopPropagation()}
             onMouseDown={e => {
               e.preventDefault();
               this.currentResizeKey = column;

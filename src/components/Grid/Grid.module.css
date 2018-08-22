@@ -17,14 +17,14 @@
 }
 
 .body {
-    flex: 99999 1 auto;
+    flex: 1000 1 auto;
     display: flex;
     flex-direction: column;
     overflow: auto;
 }
 
 .row {
-    flex: 1 0 auto;
+    flex: 0 0 50px;
     display: inline-flex;
 }
 
@@ -52,6 +52,8 @@
     min-width: 100px;
     background-color: #555;
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 
 .headCell:last-child {
@@ -67,6 +69,8 @@
     border-right: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
     min-width: 100px;
+    display: flex;
+    align-items: center;
 }
 
 .resizeHandle {

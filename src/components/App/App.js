@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Redirect, BrowserRouter, Switch } from "react-router-dom";
 import { connect } from 'react-redux';
-import firebase from '../../firebase.js';
+import firebase, { db } from '../../firebase.js';
 import classnames from 'classnames';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
@@ -44,8 +44,14 @@ class App extends Component {
 
   componentDidMount() {
     this.removeListener = firebase.auth().onAuthStateChanged(user => {
-      this.setState({ loading: false });
-      if (user) this.props.updateUser(user);
+      if (user) {
+        db.collection('users').doc(user.uid).onSnapshot(doc => {
+          this.props.updateUser(doc.data());
+          this.setState({ loading: false });
+        });
+      } else {
+        this.setState({ loading: false });
+      }
     });
   }
   

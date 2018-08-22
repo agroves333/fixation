@@ -37,9 +37,16 @@
 .profileDropdown {
     background-color: transparent !important;
     border-color: transparent !important;
-    color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.profileDropdown:after {
+    color: #000;
 }
 
 .profileDropdownUsername {
     border: 1px solid #dddddd;
+    color: #333;
 }

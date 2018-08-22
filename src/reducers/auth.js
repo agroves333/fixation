@@ -26,8 +26,12 @@ const auth = (state = {errors: []}, action) => {
       return {...state, errors: [...state.errors, action.error.message] };
   
     case 'UPDATE_USER':
-      return {...state,
-        user: action.user,
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          ...action.user
+        },
         redirectToReferrer: false,
       };
 

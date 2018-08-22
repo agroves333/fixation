@@ -121,9 +121,3 @@ export const deleteTicket = id => dispatch => {
       });
     });
 };
-
-export const reorderColumns = (source, target) => dispatch => {
-  dispatch({
-    type: 'REORDER_COLUMNS',
-  });
-};
