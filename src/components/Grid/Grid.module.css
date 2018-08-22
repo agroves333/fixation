@@ -65,12 +65,10 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    padding: 7px 5px;
+    padding: 12px 5px;
     border-right: 1px solid #bbb;
     border-bottom: 1px solid #bbb;
     min-width: 100px;
-    display: flex;
-    align-items: center;
 }
 
 .resizeHandle {
@@ -96,6 +94,8 @@
     overflow: visible;
     background-color: #555;
     color: #fff;
+    display: flex;
+    align-items: center;
 }
 
 .action {
