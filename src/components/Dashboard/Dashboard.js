@@ -32,6 +32,7 @@ class Dashboard extends Component {
   }
 
   toggleFormModal(id) {
+    id && this.props.getTicket(id);
     this.setState({
       currentTicketId: id,
       formModalOpen: !this.state.formModalOpen,
@@ -90,19 +91,20 @@ class Dashboard extends Component {
           />
           
           {/*Form Modal*/}
-          <Modal isOpen={this.state.formModalOpen} toggle={this.toggleFormModal}>
-            <ModalHeader toggle={this.toggleFormModal}>{`${this.state.currentTicketId ? 'Update' : 'Create'} Ticket`}</ModalHeader>
+          <Modal isOpen={this.state.formModalOpen} toggle={() => this.toggleFormModal()}>
+            <ModalHeader toggle={() => this.toggleFormModal()}>{`${this.state.currentTicketId ? 'Update' : 'Create'} Ticket`}</ModalHeader>
             <ModalBody>
               <Form
-                closeModal={this.toggleFormModal}
+                closeModal={() => this.toggleFormModal()}
                 onSubmit={this.submitForm}
+                data={this.props.ticketDetails}
               />
             </ModalBody>
           </Modal>
   
           {/*Delete Confirmation Modal*/}
-          <Modal isOpen={this.state.deleteConfirmationModalOpen} toggle={this.toggleDeleteConfirmationModal}>
-            <ModalHeader toggle={this.toggleDeleteConfirmationModal}>Confirm Delete</ModalHeader>
+          <Modal isOpen={this.state.deleteConfirmationModalOpen} toggle={() => this.toggleDeleteConfirmationModal()}>
+            <ModalHeader toggle={() => this.toggleDeleteConfirmationModal()}>Confirm Delete</ModalHeader>
             <ModalBody>
               Are you sure you want to delete this ticket?
             </ModalBody>
@@ -115,7 +117,7 @@ class Dashboard extends Component {
                 }}>
                 Delete
               </Button>{' '}
-              <Button color="secondary" onClick={this.toggleDeleteConfirmationModal}>Cancel</Button>
+              <Button color="secondary" onClick={() => this.toggleDeleteConfirmationModal()}>Cancel</Button>
             </ModalFooter>
           </Modal>
   

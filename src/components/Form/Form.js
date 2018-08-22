@@ -20,31 +20,31 @@ class TicketForm extends Component {
   
   render() {
     const {
+      values,
       handleSubmit,
       handleChange,
     } = this.props;
-
     return (
       <Form className={s.form}>
         <FormGroup>
           <Label for="summary">Summary</Label>
-          <Input type="text" name="summary" onChange={handleChange} />
+          <Input type="text" name="summary" value={values.summary} onChange={handleChange} />
         </FormGroup>
         <FormGroup>
           <Label for="description">Description</Label>
-          <Input type="textarea" name="description" onChange={handleChange} />
+          <Input type="textarea" name="description" value={values.description} onChange={handleChange} />
         </FormGroup>
         <FormGroup>
           <Label for="assignee">Assignee</Label>
-          <Input type="text" name="assignee" onChange={handleChange} />
+          <Input type="text" name="assignee" value={values.assignee} onChange={handleChange} />
         </FormGroup>
         <FormGroup>
           <Label for="reporter">Reporter</Label>
-          <Input type="text" name="reporter" onChange={handleChange} />
+          <Input type="text" name="reporter" value={values.reporter} onChange={handleChange} />
         </FormGroup>
         <FormGroup>
           <Label for="priority">Priority</Label>
-          <Input type="select" name="priority" onChange={handleChange}>
+          <Input type="select" name="priority" value={values.priority} onChange={handleChange} >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -61,12 +61,14 @@ class TicketForm extends Component {
 }
 
 TicketForm.propTypes = {
+  data: PropTypes.object,
   values: PropTypes.object,
   onSubmit: PropTypes.func,
   closeModal: PropTypes.func,
 };
 
 TicketForm.defaultProps = {
+  data: {},
   values: {},
   onSubmit: () => {},
 };
@@ -74,13 +76,14 @@ TicketForm.defaultProps = {
 export default (
   connect()(
     withFormik({
-      mapPropsToValues: () => ({
+      enableReinitialize: true,
+      mapPropsToValues: ({ data }) => data || {
         summary: '',
         description: '',
         assignee: '',
         reporter: '',
         priority: 1
-      }),
+      },
       validate: (values, props) => {
         const errors = {};
         return errors;
